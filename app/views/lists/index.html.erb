@@ -1,9 +1,15 @@
-<h1>Watch List</h1>
+<%= render "layouts/navbar" %>
 
-<ul>
-  <% @lists.each do |f| %>
-    <li><%= link_to f.name, list_path(f) %></li>
-  <% end %>
-</ul>
+<h1>My Lists</h1>
 
-<%= link_to "New List", new_list_path %>
+
+<div class="container">
+  <ul>
+    <div class="cards" class="flex-container">
+      <% @lists.each do |f| %>
+        <li class="card-category" class="flex-item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+        <%= link_to f.name, list_path(f) %></li>
+      <% end %>
+    </div>
+  </ul>
+</div>
